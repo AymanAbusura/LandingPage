@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <!-- DESKTOP NAVIGATION -->
+            <div class="right-section desktop">
+                <nav class="nav desktop-nav">
+                    <a class="menu__link poppins-regular" href="#images">Изображения</a>
+                    <a class="menu__link poppins-regular" href="#video">Видео</a>
+                    <a class="menu__link poppins-regular" href="#models">3D модели</a>
+                </nav>
+                <button class="navbar_btn" onclick="togglePopup()">
+                    <span>Войти</span>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="mobile-menu">
+                <button class="navbar_btn" onclick="togglePopup()">
+                    <span>Войти</span>
+                </button>
+                <div id="burger-menu"><span></span></div>
+                <div id="menu">
+                    <ul>
+                      <li><a href="#images">Изображения</a></li>
+                      <li><a href="#video">Видео</a></li>
+                      <li><a href="#models">3D модели</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="bg">
+            <section class="home">
+                <div class="container home__hold">
+                    <div class="home__body">
+                        <div class="home__content">
+                            <h1 class="home__title">Превратите свои идеи в реальные достижения</h1>
+                            <p class="home__text">Теперь у вас под рукой всегда есть нужные изображения, видео, музыка, 3D-модели, редакционные материалы и авторские продукты.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="image-section" id="images">
+            <div class="image-container">
+                <div class="column column-1">
+                    <img src="assets/image_1.webp" alt="Image 1" class="img img-1" />
+                    <img src="assets/image_4.webp" alt="Image 4" class="img img-4" />
+                </div>
+
+                <div class="column column-2">
+                    <img src="assets/image_2.webp" alt="Image 2" class="img img-2" />
+                    <img src="assets/image_5.webp" alt="Image 5" class="img img-5" />
+                </div>
+
+                <div class="column column-3">
+                    <img src="assets/image_3.webp" alt="Image 3" class="img img-3" />
+                    <img src="assets/image_6.webp" alt="Image 6" class="img img-6" />
+                </div>
+            </div>
+        </section>
+
+        <section class="next-section" id="video">
+            <div class="container-videos">
+                <div class="first-div">
+                    <div class="text-box">Поможем сделать ваш продукт уникальным</div>
+                    <div class="image-container-2">
+                        <div class="frame">
+                            <div class="play-button"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="second-div">
+                    <div class="video-block">
+                        <div class="video-image">
+                            <div class="play-button"></div>
+                        </div>
+                        <div class="text-block">
+                            <div class="text-title">эксклюзив</div>
+                            <div class="text-description">Используйте уникальный контент в своих целях</div>
+                        </div>
+                    </div>
+
+                    <div class="video-block">
+                        <div class="video-image-2">
+                            <div class="play-button"></div>
+                        </div>
+                        <div class="text-block">
+                            <div class="text-title">высокое качество</div>
+                            <div class="text-description">Изображения и видео в высочайшем качестве</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container" id="models">
+            <div class="content-container">
+                <div class="text-block-create">
+                    <h1 class="main-heading">Создавайте свои сайты в пару кликов</h1>
+                    <p class="description">Мы создали новый продукт, который поможет дизайнерам, разработчикам и небольшим стартапам создать свой сайт быстро и просто.</p>
+                    <button class="learn-more-btn" onclick="togglePopup()">Подробнее</button>
+                </div>
+
+                <div class="features">
+                    <div class="feature-item">
+                        <img src="assets/create-icon-1.png" alt="Messenger Icon" class="feature-icon" />
+                        <div class="feature-text">
+                            <h3 class="feature-title">Bootstrap 4</h3>
+                            <p class="feature-desc">HTML верстка основана на одном из самых распространенных и надежных фреймворков</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <img src="assets/create-icon-2.png" alt="Shield Icon" class="feature-icon" />
+                        <div class="feature-text">
+                            <h3 class="feature-title">HTML5 & CSS3</h3>
+                            <p class="feature-desc">Для достижения наилучшего результата мы использовали только проверенные временем технологии.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right-image">
+                <img src="assets/create_1.webp" alt="Apartment building" />
+            </div>
+        </section>
+
+        <section class="plans-section">
+            <div class="container plans-container">
+                <div>
+                    <h1>У нас есть два тарифа</h1>
+
+                    <div class="toggle-container">
+                        <span>Месяц</span>
+                        <label class="switch">
+                            <input type="checkbox" id="toggle" checked />
+                            <span class="slider"></span>
+                        </label>
+                        <span>Год</span>
+                    </div>
+                </div>
+
+                <div class="plans">
+                    <div class="plan">
+                        <img src="assets/tariffs_1.webp" alt="opt-img" />
+                        <div class="plan-content">
+                            <div>
+                                <div class="plan-header">
+                                    <span>Оптимальный</span>
+                                    <span id="price1">500 ₽</span>
+                                </div>
+                                <p>Редактируйте фото и видео в режиме онлайн. Создавайте одностраничные сайты из готовых компонентов</p>
+                            </div>
+                            <button class="btn btn-primary" onclick="togglePopup()">Начать бесплатно</button>
+                        </div>
+                    </div>
+                    <div class="plan">
+                        <img src="assets/tariffs_2.webp" alt="pro-img" />
+                        <div class="plan-content">
+                            <div>
+                                <div class="plan-header">
+                                    <span>Профи</span>
+                                    <span id="price2">1 000 ₽</span>
+                                </div>
+                                <p>Редактируйте фото и видео в режиме онлайн. Создавайте одностраничные и многостраничные сайты из готовых компонентов</p>
+                            </div>
+                            <button class="btn btn-secondary" onclick="togglePopup()">Начать бесплатно</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="popupOverlay" class="overlay-container">
+            <div class="popup-box">
+                <button class="close-button" onclick="togglePopup()" aria-label="Close form popup">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                </button>
+
+
+                <div class="header-section">
+                    <h2>Оставить заявку</h2>
+                    <p>Менеджеры перезвонят или напишут в течение дня.
+                        Поможем определиться и протестировать продукт.
+                        Без спама и навязчивости</p>
+                </div>
+
+                <form onsubmit="submitForm(event)">
+                    <div class="form-container">
+                        <input class="form-input" type="email" placeholder="Email" required>
+                        <input class="form-input" type="text" placeholder="Иван Иванов" required>
+                        <input class="form-input" type="text" placeholder="Телефон" required>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn-submit" type="submit">Отправить</button>
+                        <div class="custom-checkbox-container">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" id="consentCheckbox" required>
+                            </label>
+                            <span class="checkbox-text">
+                                Я соглашаюсь на обработку персональных данных и присоединяюсь к регламенту СБИС
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="thankYouOverlay" class="thank-you-overlay">
+            <div class="thank-you" id="thankYou">
+                <button class="close-button" onclick="closePopup()" aria-label="Close thank you popup">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                </button>
+                <div>
+                    <h2>Спасибо за заявку</h2>
+                    <p>Наши менеджеры свяжутся с вами в течение 5 минут</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script src="js/scripts.js"></script>
+
+</body>
+</html>
