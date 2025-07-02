@@ -756,7 +756,17 @@ input:checked + .slider:before {
   width: 474px;
   height: 38px;
   outline: none;
+  transition: border-color 0.3s;
 }
+
+.form-input.error {
+  border-bottom: 2px solid red;
+}
+
+.form-input.valid {
+  border-bottom: 2px solid green;
+}
+
 .form-input::placeholder {
   color: #FFFFFF99;
   font-weight: 400;
