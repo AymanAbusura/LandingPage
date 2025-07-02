@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+
+    <script src="js/jquery-3.7.1.min.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page</title>
 
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/intlTelInput.css">
 </head>
 <body>
     <div class="wrapper">
@@ -198,9 +202,9 @@
 
                 <form onsubmit="submitForm(event)">
                     <div class="form-container">
-                        <input class="form-input" type="email" placeholder="Email" required>
-                        <input class="form-input" type="text" placeholder="Иван Иванов" required>
-                        <input class="form-input" type="text" placeholder="Телефон" required>
+                        <input class="form-input" type="email" id="email" name="email" placeholder="Email" required>
+                        <input class="form-input" type="text" id="full_name" name="full_name" placeholder="Иван Иванов" required>
+                        <input class="form-input" type="tel" id="phone" name="phone" placeholder="Телефон" required>
                     </div>
 
                     <div class="form-actions">
@@ -233,6 +237,34 @@
     </div>
 
 <script src="js/scripts.js"></script>
+
+<script src="js/intlTelInput.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var input = document.querySelector("#phone");
+    var iti = window.intlTelInput(input, {
+        separateDialCode: true,
+        initialCountry: "RU",
+        autoPlaceholder: "aggressive",
+        hiddenInput: 'full_phone',
+        onlyCountries: ["RU"],
+        utilsScript: "js/utils.js"
+    });
+    $('#form').on('submit', function(e) {
+    if (!iti.isValidNumber()) {
+        error.style.display = "block"
+        return false
+    } else {
+        document.querySelector('.rf-form__loader').style.display = ''
+    }
+    })
+
+    $('#prefix').val($('.iti__selected-dial-code')[0].innerText)
+    $('#phone').on('countrychange', function() {
+        $('#prefix').val($('.iti__selected-dial-code')[0].innerText)
+    })
+});
+</script>
 
 </body>
 </html>
