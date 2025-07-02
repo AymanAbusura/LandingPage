@@ -127,6 +127,21 @@ document.addEventListener("DOMContentLoaded", function () {
     if (isValid) {
       document.getElementById('popupOverlay').classList.remove('show');
       document.getElementById('thankYouOverlay').classList.add('show');
+
+      // Reset form and clear validation classes
+      const form = document.getElementById('popupForm');
+      if (form) {
+        form.reset();
+
+        form.querySelectorAll('.form-input').forEach(input => {
+          input.classList.remove('error', 'valid');
+        });
+
+        const consentCheckboxContainer = checkbox.closest(".custom-checkbox");
+        if (consentCheckboxContainer) {
+          consentCheckboxContainer.classList.remove('error', 'valid');
+        }
+      }
     }
   };
 
